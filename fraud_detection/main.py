@@ -7,7 +7,7 @@ from utils import feature_engineering, evaluate
 
 
 # if need to evaluate on test data, please put the correct test file path and read the data
-data = pd.read_csv('fraudTrain.csv', index_col = 0, parse_dates=['trans_date_trans_time', 'dob'])
+data = pd.read_csv('fraud_detection/fraudTrain.csv', index_col = 0, parse_dates=['trans_date_trans_time', 'dob'])
 
 # if evaluate on test, change it to False
 is_train = True
@@ -34,15 +34,15 @@ if is_train:
     gbm.fit(X_train, y_train, eval_set=[(X_test, y_test)], 
             early_stopping_rounds=5, categorical_feature=feature_cols[-7:])
 
-    joblib.dump(gbm, 'Q4_output/lightgbm_model.pkl')
+    joblib.dump(gbm, 'fraud_detection/output/lightgbm_model.pkl')
 
     y_pred = evaluate(gbm, X_test, y_test)
 else:
-    gbm = joblib.load('Q4_output/lightgbm_model.pkl')
+    gbm = joblib.load('fraud_detection/output/lightgbm_model.pkl')
     y_pred = evaluate(gbm, X, y)
 
 
 y_pred_df = pd.DataFrame(y_pred)
-y_pred_df.to_csv("Q4_output/Q4_predicted_results.csv", index=False, header=False)
+y_pred_df.to_csv("fraud_detection/output/predicted_results.csv", index=False, header=False)
 
 
