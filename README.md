@@ -1,5 +1,5 @@
 # DataMining
-MSBD5002 data mining assignments
+MSBD5002 data mining assignments and final exam
 ---
 
 ## Required Packages
