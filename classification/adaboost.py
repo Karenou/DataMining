@@ -3,10 +3,13 @@ np.random.seed(0)
 
 class Adaboost:
 
-    def __init__(self) -> None:
+    def __init__(self, n_boosting=10) -> None:
         """
         initialize data and weight
         """
+        # number of weak classifiers
+        self.n_boosting = n_boosting
+        # number of data points
         self.n = 10
         self.x = list(range(self.n))
         self.y = np.array([1,1,-1,-1,-1,1,1,-1,-1,1])
@@ -61,9 +64,8 @@ class Adaboost:
         estimator_thresholds = []     # threshold of each weak classifier
         sampled_data = []   # sampled data of each weak classifier
         h = None
-        T = 10  # the number of weak classifiers
 
-        for i in range(T):
+        for i in range(self.n_boosting):
             
             # sample data D_i based on current weights
             sample_x = np.random.choice(a=self.x, size=self.n, replace=True, p=self.weight)
@@ -106,7 +108,7 @@ class Adaboost:
         return h, estimator_weights, estimator_errors, estimator_thresholds, sampled_data
 
 
-adaboost = Adaboost()
+adaboost = Adaboost(n_boosting=10)
 final_y_pred, estimator_weights, estimator_errors, estimator_thresholds, sampled_data = adaboost.train()
 
 print("-----details of each weak classifier-----")
