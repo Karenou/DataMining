@@ -126,12 +126,12 @@ class FuzzyCluster(object):
         ax2.set_ylabel('y')
         plt.colorbar(scatter2)
 
-        if not os.path.exists("./fuzzy_cluster"):
-            os.makedirs("./fuzzy_cluster")
-        save_path = "./fuzzy_cluster/step_%d.png" % (step+1)  
+        if not os.path.exists("clustering/pictures/fuzzy_cluster"):
+            os.makedirs("clustering/pictures/fuzzy_cluster")
+        save_path = "clustering/pictures/fuzzy_cluster/step_%d.png" % (step+1)  
         plt.savefig(save_path)
         # plt.show()
 
 
-clustering = FuzzyCluster(file_path="EM_Points.txt")
+clustering = FuzzyCluster(file_path="clustering/dataset/EM_Points.txt")
 clustering.run(num_iterations=15, epsilon=1e-3, p=4)
