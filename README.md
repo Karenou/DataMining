@@ -192,7 +192,7 @@ There are 4 datasets: `movies.csv`, `rating_train.csv`, `rating_test.csv`, and `
 
 - Model used
 
-I used DeepFM provided by the DeepCTR package for building the recommendation system. Details of the DeepFM model could be found in this original [paper].(https://arxiv.org/abs/1703.04247) The implementation largely follows this [documentation].(https://deepctr-doc.readthedocs.io/en/latest/Examples.html#multi-value-input-movielens)
+I used DeepFM provided by the DeepCTR package for building the recommendation system. Details of the DeepFM model could be found in this original [paper](https://arxiv.org/abs/1703.04247). The implementation largely follows this [documentation](https://deepctr-doc.readthedocs.io/en/latest/Examples.html#multi-value-input-movielens).
 
 Run the following code in terminal to get the predicted output.
 ```
@@ -211,7 +211,7 @@ python3 movieLens_Resys/main.py
 
 - Data description
 
-The dataset used here is the “Sentiment140”, which originated from Stanford University. It contains 1,600,000 tweets extracted using the twitter api. The tweets have been annotated (0 = negative, 4 = positive) and they can be used to detect sentiments . It contains the following 6 fields: target, id, date, flag, user and text. The data can be downloaded via this [link].(https://drive.google.com/file/d/1s2cUol3CbfczjG328vuvmAhjLJMxJMkM/view?usp=sharing)
+The dataset used here is the “Sentiment140”, which originated from Stanford University. It contains 1,600,000 tweets extracted using the twitter api. The tweets have been annotated (0 = negative, 4 = positive) and they can be used to detect sentiments . It contains the following 6 fields: target, id, date, flag, user and text. The data can be downloaded via this [link](https://drive.google.com/file/d/1s2cUol3CbfczjG328vuvmAhjLJMxJMkM/view?usp=sharing).
 
 - Data cleaning procedures
     - Decode HTML using htmk package
@@ -223,9 +223,9 @@ The dataset used here is the “Sentiment140”, which originated from Stanford 
 
 We could then visualize the frequent words in the positive text and negative text. 
 
-Frequent Words in the Positive Tweets. [pic](twitter_sentiment_analysis/output/positive_wordcloud.png)
+Frequent Words in the Positive Tweets. ![pic](twitter_sentiment_analysis/output/positive_wordcloud.png?raw=True "Frequent Words in the Positive Tweets")
 
-Frequent Words in the Negative Tweets. [pic](twitter_sentiment_analysis/output/negative_wordcloud.png)
+Frequent Words in the Negative Tweets. ![pic](twitter_sentiment_analysis/output/negative_wordcloud.png?raw=True "Frequent Words in the Negative Tweets")
 
 - Word Frequency
 
