@@ -134,4 +134,25 @@ python3 covid_prediction/plot.py
 
 - Model performance
 
-The model predicts US confirmed cases and deaths cases from 2021/11/30 to 2021/12/06. The ![results](covid_prediction/output/prediction_result.png?raw=true "Covid19 Confirmed and Death Cases vs Prediction Results in the US") are as below.
+The model predicts US confirmed cases and deaths cases from 2021/11/30 to 2021/12/06. The prediction results are as below. ![results](covid_prediction/output/prediction_result.png?raw=true "Covid19 Confirmed and Death Cases vs Prediction Results in the US")
+
+
+## Handwritten Digit Classification
+
+- Required packages
+    - torch==1.10
+    - numpy, pandas, matplotlib
+    - tqdm
+
+- Data description
+
+The train dataset can be downloaded via this [link](https://drive.google.com/file/d/1g-EcByqjG0nxZvVovOZEwHd9mTDuKuye/view?usp=sharing). Download the dataset and put it under the `digit_classification` folder. This dataset contains 9269 images about the handwritten digits. Each row is the data for one instance. The first 784 columns in a row correspond to the 784 features of an instance (a 28*28 image), and the last column is the lable, ranging from 0 to 9.
+
+- Model architecture
+
+I used 3 convolutional layers, with the number of filters increasing from 16 to 128. BatchNorm, Dropout and MaxPool layers are added after each Conv layer. Then two fully connected layers are added to flatten and convert the output into 10 units. The accuracy on train set could reach over 95% after training the CNN model for 20 epochs.
+
+Run the following code in terminal to get the predicted output.
+```
+python3 digit_classification/main.py
+```
