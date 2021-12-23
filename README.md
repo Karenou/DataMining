@@ -90,3 +90,48 @@ To run the program, run the following command in terminal. The clustering result
 ```
 python3 clustering/NestedLoop.py
 ```
+
+## Community Detection
+
+- Required packages
+    - networkx==2.2
+    - sklearn
+    - pandas
+
+- Dataset description
+
+The file `community_detection/dataset/email-Eu-core.txt` represents the social network generated using email data from a large European research institution. There is an edge (u,v) in the network if person u sent person v at least one email. Each line in this file records an email communication link between members of the institution. The `community_detection/dataset/email-Eu-core-department-labels.txt` file provides the ground-truth department membership labels.B ased on the two files, detect 42 communities among 1005 members of the institution. 
+
+- Algorithm used
+
+I use an open-sourced package **networkx** to detect the communities and the Asynchronous Fluid Communities algorithm - asyn_fluidc provided by the packages. The algorithm is based on the simple idea of fluids interacting in an environment, expanding and pushing each other. Its initialization is random, so found communities may vary on different executions. An advantage of it is that it allows for the definition of number of communities to be found. Run ```python3 community_detection/main.py```, the output is saved in `result.csv`.
+
+- Evaluation metric
+
+For community detection, normalized mutual information is widely used for performance evaluation. The algorithm has a NMI of 0.6851.
+
+## Covid-19 Daily Prediction
+
+- Required packages
+    - matplotlib, plotly, pandas, numpy, sklearn
+    - tensorflow
+
+- Data description
+
+The two datasets `covid_prediction/dataset/covid19_confirmed_global.txt` and `covid_prediction/dataset/covid19_deaths_global.txt` record the number of confirmed cases and deaths from 2022/01/22 to 2021/11/29 in different regions.
+
+- Algorithm used
+
+I ensembled three models to predict the daily covid confirmed and death cases in the US respectively. They are linear regression model with second-order polinomial, Bayesian ridge regression and LSTM.
+
+Run the following code in terminal to get the predicted output.
+```
+python3 covid_prediction/linear_model.py
+python3 covid_prediction/lstm.py
+python3 covid_prediction/ensemble.py
+python3 covid_prediction/plot.py
+```
+
+- Model performance
+
+The model predicts US confirmed cases and deaths cases from 2021/11/30 to 2021/12/06. The ![results](covid_prediction/output/prediction_result.png?raw=true "Covid19 Confirmed and Death Cases vs Prediction Results in the US") are as below.
