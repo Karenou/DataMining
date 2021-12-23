@@ -121,16 +121,16 @@ class NestLoop:
         ax.set_xlabel('x')
         ax.set_ylabel('y')
 
-        if not os.path.exists("./NestedLoop"):
-            os.makedirs("./NestedLoop")
-        save_path = "./NestedLoop/r_%.1f_k_%d.png" % (self.r, self.k)
+        if not os.path.exists("clustering/pictures/NestedLoop"):
+            os.makedirs("clustering/pictures/NestedLoop")
+        save_path = "clustering/pictures/NestedLoop/r_%.1f_k_%d.png" % (self.r, self.k)
         plt.savefig(save_path)
         # plt.show()
 
 
 # have tune parameters: r in [10, 12.5, 15], p in [0.01, 0.015, 0.02], m_block in [3, 4]
 r, p, m_block = 15, 0.01, 3
-model = NestLoop("Nested_Points.txt", r=r, p=p, m_blocks=m_block)
+model = NestLoop("clustering/dataset/Nested_Points.txt", r=r, p=p, m_blocks=m_block)
 data, outliers = model.run()
 model.plot_outliers()
 
