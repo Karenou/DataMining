@@ -104,34 +104,34 @@ class DBSCAN:
         ax.set_xlabel('x')
         ax.set_ylabel('y')
 
-        if not os.path.exists("./DBSCAN"):
-            os.makedirs("./DBSCAN")
-        save_path = "./DBSCAN/eps_%.1f_minPts_%d.png" % (self.eps, self.minPts)  
+        if not os.path.exists("clustering/pictures/DBSCAN"):
+            os.makedirs("clustering/pictures/DBSCAN")
+        save_path = "clustering/pictures/DBSCAN/eps_%.1f_minPts_%d.png" % (self.eps, self.minPts)  
         plt.savefig(save_path)
         # plt.show()
 
 
 
 print("eps = 3, minPts = 5")
-dbscan = DBSCAN("DBSCAN_Points.txt", eps=3, minPts=5)
+dbscan = DBSCAN("clustering/dataset/DBSCAN_Points.txt", eps=3, minPts=5)
 dbscan.run()
 dbscan.plot_clusters()
 print()
 
 print("eps = 2.5, minPts = 20")
-dbscan = DBSCAN("DBSCAN_Points.txt", eps=2.5, minPts=20)
+dbscan = DBSCAN("clustering/dataset/DBSCAN_Points.txt", eps=2.5, minPts=20)
 dbscan.run()
 dbscan.plot_clusters()
 print()
 
 print("eps = 2, minPts = 20")
-dbscan = DBSCAN("DBSCAN_Points.txt", eps=2, minPts=20)
+dbscan = DBSCAN("clustering/dataset/DBSCAN_Points.txt", eps=2, minPts=20)
 dbscan.run()
 dbscan.plot_clusters()
 print()
 
 print("eps = 2, minPts = 15")
-dbscan = DBSCAN("DBSCAN_Points.txt", eps=2, minPts=15)
+dbscan = DBSCAN("clustering/dataset/DBSCAN_Points.txt", eps=2, minPts=15)
 dbscan.run()
 dbscan.plot_clusters()
 print()
