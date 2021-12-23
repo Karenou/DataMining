@@ -223,10 +223,6 @@ The dataset used here is the “Sentiment140”, which originated from Stanford 
 
 We could then visualize the frequent words in the positive text and negative text. 
 
-Frequent Words in the Positive Tweets. ![pic](twitter_sentiment_analysis/output/positive_wordcloud.png?raw=True "Frequent Words in Positive Tweets")
-
-Frequent Words in the Negative Tweets. ![pic](twitter_sentiment_analysis/output/negative_wordcloud.png?raw=True "Frequent Words in Negative Tweets")
-
 - Word Frequency
 
 We could also count the term frequency using the `sklearn.feature_extraction.text.CountVectorizer`. The token frequency of positive tweets and negative tweets are saved in `twitter_sentiment_analysis/output`.
